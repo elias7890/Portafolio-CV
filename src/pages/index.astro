@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import StyleIcons from '../components/StyleIcons.astro';
+import Github from '../icons/Github.astro';
+import Correo from '../icons/Correo.astro';
+import Fotos from '../icons/Fotos.astro';
+import Experiencia from '../icons/Experiencia.astro';
+import SectionContainer from '../icons/SectionContainer.astro';
+import Maletin from '../icons/Maletin.astro';
+import Code from '../icons/Code.astro';
+import Projects from '../icons/Projects.astro';
+---
+
+<Layout 
+  title="Elias Concha, Desarrollador."
+  description=""
+>
+<main class="px-4">
+	<SectionContainer class="py-44 pb-32" >
+		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex  flex-row gap-x-4 pb-6 lg:pb-10">
+			Hola, Soy Elias Concha<div class="flex justify-center items-center">
+				<Badge>Open to work</Badge></div>
+		</h1>
+		<h2 class=" text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+			<span class="text-yellow-200/90 ">Desarrollador Front-End </span><span> con más de 2 años de experiencia,</span> 
+		    <br> <span>especializado en </span> <span class="text-yellow-200/90 ">soluciones web centradas en la experiencia de usuario y optimización del rendimiento</span>.
+		</h2>
+		<nav class="flex gap-x-8 mt-5 ">
+			<StyleIcons href="https://www.linkedin.com/in/elias-concha-2b6329220/"> 
+				<Linkedin class ="size-4 md:size-6"/>
+				  LikedIn
+			</StyleIcons>
+			<StyleIcons href="https://github.com/elias7890/">
+				<Github class="size-4 md:size-6"/>
+				Github
+			</StyleIcons>
+			<StyleIcons href=" mailto:eliashristo2@gmail.com ">
+				<Correo class="size-4 md:size-6"/>
+				eliashristo2@gmail.com
+			</StyleIcons>
+			<StyleIcons href="  ">
+				<Fotos class="size-4 md:size-6"/>
+				RidersInFocus
+			</StyleIcons>
+		</nav>
+	</SectionContainer>
+	<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semiblod mb-6 flex space-x-6 items-center">
+				<Maletin class="size-6"/>
+				Experiencia laboral
+			</h2>
+			<Experiencia />
+	</SectionContainer>
+
+	<SectionContainer id="habilidades">
+		<h2 class="text-3xl font-semiblod mb-6 flex space-x-6 items-center">
+			<Code class="size-6"/>
+			Habilidades Técnicas
+		</h2>
+		<Projects />
+</SectionContainer>
+
+	</main>
+</Layout>
+<style>
+	/* Estilos para el contenedor del nav */
+nav {
+    display: flex;
+    gap: 2rem; /* Ajusta el espacio entre los botones */
+    justify-content: center; /* Centra los botones */
+    align-items: center;
+}
+
+/* Tamaños específicos para los íconos según las clases existentes */
+.icon.size-4 {
+    width: 24px;
+    height: 24px;
+}
+
+.icon.md\:size-6 {
+    width: 36px;
+    height: 36px;
+}
+
+/* Media queries para ajustar el comportamiento en pantallas más pequeñas */
+@media (max-width: 768px) {
+    nav {
+        gap: 1.5rem; /* Reduce el espacio entre los botones en pantallas medianas */
+    }
+
+    .icon.size-4 {
+        width: 30px;
+        height: 30px;
+    }
+
+    .icon.md\:size-6 {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 1rem; /* Espacio reducido en pantallas pequeñas */
+        flex-wrap: wrap; /* Permitir que los botones se apilen en varias filas si es necesario */
+    }
+
+    .icon.size-4 {
+        width: 28px;
+        height: 28px;
+    }
+
+    .icon.md\:size-6 {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+</style>

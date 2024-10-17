@@ -1,0 +1,39 @@
+---
+import ExperienciaIcons from '../icons/ExperienciaIcons.astro';
+const Experiencie = [
+    {
+        date: 'Actualmente...',
+        title: 'Proyectos Freelancer',
+        description:
+           "Desarrollo proyectos freelance orientados a la creación de soluciones web personalizadas para pymes, enfocadas en potenciar su presencia digital y mejorar la experiencia de usuario, garantizando sitios web funcionales, atractivos y alineados con sus objetivos comerciales.",
+        link:''
+    },
+    {
+        date: 'Mayo - Agosto 2024',
+        title: 'Grupo Firma',
+        description:
+            "Implementación de aplicaciones con Docker, garantizando entornos reproducibles y escalables. Desarrollo de una plataforma interna de Recursos Humanos utilizando Angular (front-end) y Node.js (back-end), integrando bases de datos y APIs para asegurar una funcionalidad robusta y una experiencia de usuario intuitiva.",
+        link:''
+    },
+    {
+        date: 'Agosto 2022 - Enero 2024',
+        title: 'Vass Company',
+        description:
+           "Diseñé y desarrollé páginas web para una AFP, facilitando a los clientes el acceso a información clave y la gestión de sus fondos de pensiones. Además, implementé un módulo integral para la administración eficiente de licencias médicas en una caja de compensación. Asimismo, desarrollé y optimicé una plataforma de portabilidad financiera que permite la comparación y transferencia ágil y segura de productos financieros.",
+        link:''
+    }
+]
+---
+
+
+<ol class=" relative border-s border-gray-200 dark:border-gray-700"> 
+    {
+        Experiencie.map(experiencie => (
+            <li class="mb-10 ms-4">
+                <ExperienciaIcons {...experiencie}/>
+            </li>    
+        ))
+    }                 
+   
+</ol>
+

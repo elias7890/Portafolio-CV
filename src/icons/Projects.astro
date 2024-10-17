@@ -1,0 +1,131 @@
+---
+import React from "./React.astro"
+import Asstro from "./Asstro.astro"
+import Angular from "./Angular.astro"
+import Javascript from "./Javascript.astro"
+import Typescript from "./Typescript.astro"
+import Linux from "./Linux.astro"
+import Selenium from "./Selenium.astro"
+import Tailwind from "./Tailwind.astro"
+
+const TAGS ={
+    ASTRO:{
+        name: "Astro",
+        class: "bg-black text-white",
+        icon: Asstro,
+    },
+
+    REACT:{
+        name: "React",
+        class: "bg-black text-white",
+        icon: React ,
+    },
+
+    ANGULAR:{
+        name: "Angular",
+        class: "bg-black text-white",
+        icon: Angular,
+    },
+
+    JAVASCRIPT:{
+        name: "Javascript",
+        class: "bg-black text-white",
+        icon: Javascript,
+    },
+
+    TYPESCRIPT:{
+        name: "Typescript",
+        class: "bg-black text-white",
+        icon: Typescript,
+    },
+
+    LINUX:{
+        name: "Linux",
+        class: "bg-black text-white",
+        icon: Linux,
+    },
+
+    SELENIUM:{
+        name: "Selenium",
+        class: "bg-black text-white",
+        icon: Selenium,
+    },
+
+    TAILWIND:{
+        name: "Tailwind Css",
+        class: "bg-black text-white",
+        icon: Tailwind
+    }
+}
+const PROJECTS = [
+    {
+        tags:[TAGS.ASTRO, TAGS.REACT, TAGS.ANGULAR, TAGS.JAVASCRIPT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SELENIUM, TAGS.LINUX]
+    }
+]
+---
+
+{
+    PROJECTS.map(({  tags, }) => (
+        <article>
+            <ul>
+                {tags.map(tag =>(
+                    <li>
+                        <tag.icon class="icon" />
+                        {tag.name}
+                    </li>
+                ))}
+            </ul>
+           
+        </article>
+    )
+    )
+}
+
+
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los íconos se acomoden en varias líneas si es necesario */
+    gap: 20px; /* Espacio entre los tags */
+    padding: 0;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    justify-content: center; /* Centra los íconos */
+}
+
+li {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Acomoda el icono y el texto en columna */
+    text-align: center;
+}
+
+.icon {
+    width: 5vw; /* Ajusta el tamaño relativo del ícono */
+    height: 5vw; /* El tamaño será proporcional al ancho de la ventana */
+    max-width: 60px; /* Establece un tamaño máximo para evitar que sean demasiado grandes */
+    max-height: 60px;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    ul {
+        gap: 10px; /* Reduce el espacio entre íconos */
+    }
+
+    .icon {
+        width: 8vw; /* Haz los íconos más grandes en pantallas pequeñas */
+        height: 8vw;
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon {
+        width: 10vw; /* Ajusta el tamaño de los íconos en pantallas muy pequeñas */
+        height: 10vw;
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
+</style>
